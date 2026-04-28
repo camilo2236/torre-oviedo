@@ -145,12 +145,17 @@ tailwind.config = {
 
 <!-- ═══ HERO ═══ -->
 <section class="relative flex overflow-hidden" style="height:100svh;">
+  <!-- Click hint top right -->
+  <div onclick="openLightbox(0)" style="position:absolute;top:5.5rem;right:1.5rem;z-index:15;cursor:pointer;background:rgba(0,0,0,0.35);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);padding:0.4rem 0.9rem;display:flex;align-items:center;gap:0.4rem;transition:background 0.2s;" onmouseover="this.style.background='rgba(119,90,25,0.7)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+    <span class="material-symbols-outlined" style="color:white;font-size:1rem;">photo_library</span>
+    <span style="font-family:'Manrope',sans-serif;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:white;" data-es="Ver fotos" data-en="View photos">Ver fotos</span>
+  </div>
   <div id="hero-bg" class="absolute inset-0" style="background-size:cover;background-position:center;transform:scale(1.06);transition:transform 9s ease-out;cursor:pointer;" onclick="openLightbox(heroIdx)" title="Ver fotos"></div>
-  <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,3,10,0.92) 0%,rgba(0,3,10,0.15) 60%,transparent 100%);"></div>
+  <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,3,10,0.92) 0%,rgba(0,3,10,0.15) 60%,transparent 100%);cursor:pointer;" onclick="openLightbox(heroIdx)"></div>
 
   <!-- Desktop: bottom-left panel -->
   <div class="hidden md:flex items-end w-full relative z-10 p-16">
-    <div style="backdrop-filter:blur(14px);background:rgba(252,249,248,0.1);padding:2.5rem 3rem;max-width:600px;border-left:3px solid #775a19;">
+    <div style="backdrop-filter:blur(14px);background:rgba(252,249,248,0.1);padding:2.5rem 3rem;max-width:600px;border-left:3px solid #775a19;position:relative;z-index:5;">
       <span class="fade-up" style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:#d4b07a;display:block;margin-bottom:0.7rem;animation-delay:0.15s;" data-es="Estelar Apartamentos · Piso 8 · El Poblado · Medellín" data-en="Estelar Apartamentos · Floor 8 · El Poblado · Medellín">Estelar Apartamentos · Piso 8 · El Poblado · Medellín</span>
       <h1 class="fade-up" style="font-family:'Noto Serif',serif;font-size:clamp(3rem,5.5vw,5rem);font-weight:300;line-height:1.05;color:white;margin-bottom:1rem;animation-delay:0.3s;">Apartamento<br><em style="font-style:italic;color:#d4b07a;">de Lujo</em></h1>
       <p class="fade-up" style="font-size:0.88rem;color:rgba(255,255,255,0.68);line-height:1.75;margin-bottom:1.5rem;animation-delay:0.45s;" data-es="Amoblado y remodelado. Balcón con vista única a la ciudad. En el corazón de El Poblado." data-en="Fully furnished and renovated. Balcony with unique city views. In the heart of El Poblado.">Amoblado y remodelado. Balcón con vista única a la ciudad. En el corazón de El Poblado.</p>
@@ -257,9 +262,14 @@ tailwind.config = {
 </section>
 
 <!-- ═══ VIEW SECTION ═══ -->
-<section class="relative flex items-center overflow-hidden" style="height:72vh;">
+<section class="relative flex items-center overflow-hidden" style="height:72vh;cursor:pointer;" onclick="openLightbox(0)" title="Ver galería de fotos">
   <div id="view-bg" class="absolute inset-0" style="background-size:cover;background-position:center;"></div>
   <div class="absolute inset-0" style="background:rgba(0,3,10,0.22);"></div>
+  <!-- View section click hint -->
+  <div style="position:absolute;top:1.2rem;right:1.2rem;z-index:15;background:rgba(0,0,0,0.3);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);padding:0.35rem 0.8rem;display:flex;align-items:center;gap:0.35rem;pointer-events:none;">
+    <span class="material-symbols-outlined" style="color:rgba(255,255,255,0.7);font-size:0.9rem;">touch_app</span>
+    <span style="font-family:'Manrope',sans-serif;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);" data-es="Toca para ver galería" data-en="Tap to view gallery">Toca para ver galería</span>
+  </div>
   <div class="relative z-10 w-full px-6 md:px-24 hidden md:flex justify-end">
     <div style="max-width:480px;text-align:right;">
       <h3 style="font-family:'Noto Serif',serif;font-size:clamp(2.5rem,5vw,4.5rem);color:white;margin-bottom:1.2rem;line-height:1.05;" data-es="El horizonte<br>es tuyo." data-en="The horizon<br>is yours.">El horizonte<br>es tuyo.</h3>
